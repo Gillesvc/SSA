@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>bc98132b-f59a-49e4-8ff4-897164d8ec23</ProjectGuid>
+    <ProjectGuid>d4271d5b-8c4a-4f9d-ba47-e6c5be5f7c1b</ProjectGuid>
     <RootNamespace>Howest.NMCT.FireSale.WebApp</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
