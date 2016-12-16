@@ -1,0 +1,50 @@
+﻿@model w02p02Oplossing.PresentationModels.PMIndex   
+    @*//Zeer belangrijk, hierdoor zal Model de PMIndex bevatten.*@
+
+<div class="jumbotron">
+    <h1>IT PRO</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Slot 1: 08:00 - 12:00</h2>
+        <p>
+            <ul>
+                @foreach(var slot in Model.Slot1)
+                {
+                    <li>
+                        <a href="/home/details?id=@slot.Id">@slot.Name</a>
+                    </li>
+                }
+            </ul>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Slot 2: 12:00 - 15:00</h2>
+        <p>
+            <ul>
+                @foreach (var slot in Model.Slot2)
+                {
+                    <li>
+                        <a href="/home/details?id=@slot.Id">@slot.Name</a>
+                    </li>
+                }
+            </ul>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Slot 3: 15:00 - 17:00</h2>
+        <p>
+            <ul>
+                @foreach (var slot in Model.Slot3)
+                {
+                    <li>
+                        <a href="/home/details?id=@slot.Id">@slot.Name</a>
+                    </li>
+                }
+            </ul>
+        </p>
+    </div>
+</div>

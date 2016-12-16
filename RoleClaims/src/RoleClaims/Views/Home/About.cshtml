@@ -1,0 +1,17 @@
+﻿<p>
+
+    @User.Identity.Name
+
+    Is in role manager @User.IsInRole("Manager")
+</p>
+
+<p>
+
+    <ul>
+        @foreach (var c in @User.Claims) {
+
+            <li>@c.Type + @c.Value </li>
+        }
+    </ul>
+
+</p>

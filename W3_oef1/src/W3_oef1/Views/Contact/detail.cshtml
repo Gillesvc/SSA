@@ -1,0 +1,23 @@
+﻿@model W3_oef1.Models.Contact
+<div class="row">
+    <div class="col-lg-6">
+        <form asp-action="save" asp-controller="contact" method="post">
+            <div class="form-group">
+                <label asp-for="Naam">@Model.Naam</label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">@Model.Email</label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Bericht">@Model.Bericht</label>
+            </div>
+        </form>
+        <!--Foto van telefoon -->
+        @if (Model.ContactMe == true) {
+            <img src="~/images/contact-phone-icon-4.png" height="15" width="15" />
+        }
+        <p><a asp-action="index" asp-controller="contact">Overzicht</a></p>
+    </div>
+ </div>

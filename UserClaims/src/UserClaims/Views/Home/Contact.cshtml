@@ -1,0 +1,11 @@
+﻿ 
+
+@if (User.Identity.IsAuthenticated) {
+    <ul>
+        @foreach(var claim in User.Claims) {
+            <li>@claim.ValueType - @claim.Value</li>
+
+        }
+    </ul>
+
+}

@@ -1,0 +1,37 @@
+﻿@model Oef2.Models.Registration
+<h1>Overview</h1>
+<h3>Registration</h3>
+<div class="row">
+    <h2>Personal Details</h2>
+    <div class="col-lg-12">
+        <p>@Model.Naam</p>
+        <p>@Model.Voornaam</p>
+        <p>@Model.Leeftijd</p>
+        <p>@Model.Email</p>
+    </div>
+    <h2>Sessions</h2>
+    <div class="col-lg-12">
+        <!--maak gebruik van funties in data-->
+        <p>@Oef2.Data.GetSession(Model.SelectedSlot1).Name</p>
+        <p>@Oef2.Data.GetSession(Model.SelectedSlot2).Name</p>
+        <p>@Oef2.Data.GetSession(Model.SelectedSlot3).Name</p>
+        @if (Model.ClosingParty == true) {
+            <p>I am  coming to the Closing Party...</p>
+        } else {
+            <p>I am NOT coming to the Closing Party...</p>
+        }
+
+    </div>
+    <h2>Special info</h2>
+    <div>
+        @foreach (var item in Model.Accessoires) {
+        <p>I have a @Oef2.Data.GetDevice(item).Name</p>
+        
+        }
+        
+    </div>
+    <h2>Organisation</h2>
+    <div >
+        <p>@Oef2.Data.GetOrganization(Model.SelectedOrganization).Name</p>
+    </div>
+</div>

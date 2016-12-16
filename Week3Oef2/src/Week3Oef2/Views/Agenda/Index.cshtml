@@ -1,0 +1,39 @@
+﻿@model Week3Oef2.PresentationModel.PMAgenda
+
+
+
+<h1>IT PRO</h1>
+<h3>The first IT event for.....</h3>
+
+<h1></h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Slot 1</h2>
+        <ol>
+            @foreach(var session in Model.Slot1) {
+
+                <li><a asp-action="Detail" asp-controller="Agenda" asp-route-koekkoek="@session.Id">@session.Name</a></li>
+            }
+        </ol>
+    </div>
+    <div class="col-md-4">
+        <h2>Slot 2</h2>
+        <ol>
+            @foreach (var session in Model.Slot2) {
+
+                <li><a asp-action="Detail" asp-controller="Agenda" asp-route-koekkoek="@session.Id">@session.Name</a></li>
+            }
+        </ol>
+    </div>
+    <div class="col-md-4">
+        <h2>Slot3</h2>
+        <ol>
+            @foreach (var session in Model.Slot3) {
+
+                <li><a asp-action="Detail" asp-controller="Agenda" asp-route-koekkoek="@session.Id">@session.Name</a></li>
+            }
+        </ol>
+    </div>
+
+</div>

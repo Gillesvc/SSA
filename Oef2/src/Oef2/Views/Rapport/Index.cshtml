@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Oef2.Models.Registration
+@{
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Firstname</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>ClosingParty</th>
+            <th>Slot</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Registration reg in Model)
+        {
+            <tr>
+                <td>@Model.Naam</td>
+                <td>@Model.Voornaam</td>
+                <td>@Model.Email</td>
+                <td>@Model.Leeftijd</td>
+                <td>@Model.ClosingParty</td>
+                <td>KOMT</td>
+                <td><a href="delete">DELETE</a></td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

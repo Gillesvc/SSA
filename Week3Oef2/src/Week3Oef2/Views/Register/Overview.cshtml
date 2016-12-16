@@ -1,0 +1,33 @@
+﻿
+<h2> Overview</h2>
+
+<h3> Registration</h3>
+
+<section class="row">
+    <article class="col-md-12">
+        <h2> personal </h2>
+        <p>@ViewBag.Contacts.Name</p>
+        <p>@ViewBag.Contacts.Firstname</p>
+        <p>@ViewBag.Contacts.Age</p>
+        <p>@ViewBag.Contacts.Email</p>
+    </article>
+
+    <article class="col-md-12">
+        <h2> Sessions </h2>
+        <p>@Week3Oef2.Models.Data.GetSession(ViewBag.Contacts.Slot1Id).Name</p>
+        <p>@Week3Oef2.Models.Data.GetSession(ViewBag.Contacts.Slot2Id).Name</p>
+        <p>@Week3Oef2.Models.Data.GetSession(ViewBag.Contacts.Slot3Id).Name</p>
+    </article>
+
+    <article class="col-md-12">
+        <h2> Personal info </h2>
+        <p>@ViewBag.Contacts.Accesoires</p>
+    </article>
+
+    <article class="col-md-12">
+        <h2> Organisation </h2>
+        <p>@Week3Oef2.Models.Data.GetOrganization(ViewBag.Contacts.OrganisationId).Name</p>
+
+    </article>
+
+</section>

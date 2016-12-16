@@ -1,0 +1,29 @@
+﻿@model Oef2.PresentationModel.PMAgenda
+<div class="row">
+    <div class="col-md-4">
+        <h2>Slot 1: 9:30 - 11:30</h2>
+        <ol>
+            <!--for (int i = 0; i < Model.Slot1.Count; i++) { Model.Slot1[i].Name-->
+            @foreach (var session in Model.Slot1) { 
+                <li><a asp-action="detail" asp-controller="agenda" asp-route-damn="@session.Id">@session.Name</a></li>
+            }
+        </ol>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Slot 2: 13:30 - 15:30</h2>
+        <ol>
+            @foreach (var session in Model.Slot2) {
+                <li><a asp-action="detail" asp-controller="agenda"asp-route-damn="@session.Id">@session.Name</a></li>
+            }
+        </ol>
+    </div>
+    <div class="col-md-4">
+        <h2>Slot 1: 16:30 - 19:30</h2>
+        <ol>
+            @foreach (var session in Model.Slot3) {
+                <li><a asp-action="detail" asp-controller="agenda" asp-route-damn="@session.Id">@session.Name</a></li>
+            }
+        </ol>
+    </div>
+</div>

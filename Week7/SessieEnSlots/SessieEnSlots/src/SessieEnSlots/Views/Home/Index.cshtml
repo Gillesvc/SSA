@@ -1,0 +1,30 @@
+﻿ 
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Slot 1</h2>
+        <ul>
+            @foreach (var session in ViewBag.Slot1) {
+                <li><a asp-controller="session" asp-action="detail" asp-route-id="@session.Id">@session.Name</a></li>
+
+            }
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>Slot 2</h2>
+        <ul>
+            @foreach (var session in ViewBag.Slot2) {
+                <li><a asp-controller="session" asp-action="detail" asp-route-id="@session.Id">@session.Name</a></li>
+
+            }
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>Slot 3</h2>
+        <ul>
+            @foreach (var session in ViewBag.Slot3) {
+                <li><a asp-controller="session" asp-action="detail" asp-route-id="@session.Id">@session.Name</a></li>
+            }
+        </ul>
+    </div>
+</div>

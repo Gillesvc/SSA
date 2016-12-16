@@ -1,0 +1,80 @@
+﻿@model Week3Oef2.PresentationModel.PMRegistration
+
+<h1>New Registration</h1>
+<h3>Registration</h3>
+<section class="row">
+    <div class="col-lg-12">
+        <form method="post" asp-controller="Register" asp-action="Save">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" type="text" asp-for="@Model.NewRegistration.Name" />
+                <span asp-validation-for="@Model.NewRegistration.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input class="form-control" type="text" asp-for="@Model.NewRegistration.Firstname" />
+                <span asp-validation-for="@Model.NewRegistration.Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input class="form-control" asp-for="@Model.NewRegistration.Age" />
+                @*<span asp-validation-for="Age" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="text" asp-for="@Model.NewRegistration.Email" />
+                @*<span asp-validation-for="Name" class="text-danger"></span>*@
+            </div>
+
+            <p>Pick your sessions</p>
+            <div class="form-group">
+                <label>Slot1</label>
+                <select class="form-control" asp-items="@Model.Slot1" asp-for="@Model.NewRegistration.Slot1Id">
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Slot2</label>
+                <select class="form-control" asp-items="@Model.Slot2" asp-for="@Model.NewRegistration.Slot2Id">
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Slot3</label>
+                <select class="form-control" asp-items="@Model.Slot3" asp-for="@Model.NewRegistration.Slot3Id">
+                </select>
+            </div>
+            <p>Are you wearing dangerous accessoires</p>
+
+            @*<p>@Model.NewRegistration.Accesoires</p>
+            <p>@Model.Devices</p>*@
+
+            @foreach (var device in Model.Devices) {
+                <div class="form-group">
+                    <label>@device.Name</label>
+                    <input type="checkbox" value="@Model.NewRegistration.Accesoires"/>
+                </div>
+
+            }
+
+            <div class="form-group">
+                <label>Organisation</label>
+                <select class="form-control" asp-items="@Model.Organisations" asp-for="@Model.NewRegistration.OrganisationId">
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Are you coming to the closing party?</label>
+                <input type="checkbox" asp-for="@Model.NewRegistration.CommingToParty" />
+            </div>
+
+            <input type="submit" name="Save" value="Check" class="btn-primary btn" />
+        </form>
+    </div>
+</section>
+
+
+@section scripts{
+    @*<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>*@
+    @*<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>*@
+}

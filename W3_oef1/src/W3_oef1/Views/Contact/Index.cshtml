@@ -1,0 +1,55 @@
+﻿@model Contact
+<!-- normaal namespace ervoor, maar in _viewimports gezet dat alle docs dit weten-->
+<!--asp ervoor zetten is niet beter, maar de browser gebruikt dit omdat hij weet dat het ASP.NET is-->
+<div class="row">
+    <div class="col-lg-6">
+        <form asp-controller="contact" method="post" asp-action="save">
+            <div class="form-group">
+                <label>Naam</label>
+                <input asp-for="Naam" class="form-control" />
+                <!-- Model.Naam werkt niet-->
+                <span asp-validation-for="Naam" class="text-danger"></span><br />
+                <label>E-mail</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span><br />
+
+                <label>Bericht</label>
+                <textarea asp-for="Bericht" class="form-control"></textarea>
+                <span asp-validation-for="Bericht" class="text-danger"></span>
+
+
+                <input asp-for="ContactMe" />
+                <label>U mag me contacteren</label>
+            </div>
+            <input type="submit" name="send" value="Send" class="btn btn-default" />
+        </form>
+    </div>
+</div>
+@if (ViewBag.Cookie.Count != 0) {
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Email</th>
+                <th>Neem contact</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var info in ViewBag.Cookie) {
+                <tr>
+                    <td>@info.Naam</td>
+                    <td>@info.Email</td>
+                    @if (info.ContactMe) {
+                        <td>ja</td>
+                    } else {
+                        <td>neen</td>
+
+                    } @*asp-route-burb -> de link die je meegeeft, zie controller*@
+                    <td><a asp-action="detail" asp-controller="contact" asp-route-burb="@info.ContactInfoId">Detail</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
